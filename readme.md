@@ -1,4 +1,4 @@
-# Minimal Bootstrapping Emacs Config
+# Bootstrapping Emacs Config with Quelpa and use-package
 
 This config uses Quelpa and `quelpa-use-package` to bootstrap itself
 and provide a convenient framework for building your config.
