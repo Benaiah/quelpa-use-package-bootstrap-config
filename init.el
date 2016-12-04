@@ -51,7 +51,7 @@
 ;; all, you could add a line like this:
 ;;
 ;; (use-package ac-php :quelpa
-;;   (:stable nil :repo "xcwen/ac-php" :fetcher github
+;;   (:stable nil :fetcher github :repo "xcwen/ac-php"
 ;;    :files ("ac-php.el" "company-php.el")))
 
 ;; That's all! I hope this example was helpful to you.
