@@ -12,7 +12,7 @@ and provide a convenient framework for building your config.
     (quelpa-self-upgrade)
   (with-temp-buffer
     (url-insert-file-contents
-     "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
+     "https://framagit.org/steckerhalter/quelpa/raw/master/bootstrap.el")
     (eval-buffer)))
 
 ;; Make Quelpa prefer MELPA-stable over melpa. This is optional but
@@ -23,8 +23,8 @@ and provide a convenient framework for building your config.
 ;; Install quelpa-use-package, which will install use-package as well
 (quelpa
  '(quelpa-use-package
-   :fetcher github
-   :repo "quelpa/quelpa-use-package"
+   :fetcher git
+   :url "https://framagit.org/steckerhalter/quelpa-use-package.git"
    :stable nil))
 (require 'quelpa-use-package)
 
