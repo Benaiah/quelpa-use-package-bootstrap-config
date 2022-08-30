@@ -21,6 +21,7 @@
 (setq quelpa-update-melpa-p t)
 
 ;; Install quelpa-use-package, which will install use-package as well
+;;
 (quelpa
  '(quelpa-use-package
    :fetcher git
