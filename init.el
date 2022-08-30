@@ -1,24 +1,30 @@
 ;; Initialize the emacs packaging system
-(package-initialize)
+;;
+(package-initialize t)
 
-;; Bootstrap quelpa
-(if (require 'quelpa nil t)
+;; Install or upgrade quelpa
+;;
+(if (package-installed-p 'quelpa)
     (quelpa-self-upgrade)
   (with-temp-buffer
-    (url-insert-file-contents
-     "https://framagit.org/steckerhalter/quelpa/raw/master/bootstrap.el")
-    (eval-buffer)))
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
 
 ;; Make Quelpa prefer MELPA-stable over melpa. This is optional but
 ;; highly recommended.
 ;;
 ;; (setq quelpa-stable-p t)
 
+;; Make Quelpa update MELPA before installing packages
+;;
+(setq quelpa-update-melpa-p t)
+
 ;; Install quelpa-use-package, which will install use-package as well
 (quelpa
  '(quelpa-use-package
    :fetcher git
-   :url "https://framagit.org/steckerhalter/quelpa-use-package.git"
+   :url "https://github.com/quelpa/quelpa-use-package.git"
    :stable nil))
 (require 'quelpa-use-package)
 

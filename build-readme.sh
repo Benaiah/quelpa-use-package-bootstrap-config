@@ -17,5 +17,5 @@ and provide a convenient framework for building your config.
 EOF
 
 < init.el tr '\n' '\f' |
-    sed 's/.*/```emacs-lisp\f\0\f```\f/' |
+    sed -E 's/(.*)/```emacs-lisp\n\1```\n/' |
     tr '\f' '\n' >> "$DIR/readme.md"
